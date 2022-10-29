@@ -4,6 +4,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('cookie-session');
 const path = require('path');
+const timeout = require('connect-timeout');
 const { forwardAuthenticated, ensureAuthenticated } = require('./config/auth');
 
 // Init App
@@ -36,7 +37,9 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Express Body Parser
+app.use(timeout('5s'));
 app.use(express.urlencoded({ extended: true }));
+app.use(haltOnTimedout);
 
 // Express Session
 app.use(
