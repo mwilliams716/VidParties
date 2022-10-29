@@ -1,0 +1,43 @@
+<div class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/img/logo.png" alt="VidParties" width="150" height="30">
+        </a>
+        <ul class="navbar-nav">
+            <% if(logUser != "") { %>
+                <li class="nav-item">
+                    <a href="/users/<%- logUser.username %>" class="nav-link">
+                        <% if(logUser.avatar) { %>
+                            <img src="/uploads/<%- logUser.username %>/<%- logUser.avatar %>" width="20" height="20" class="rounded-circle mr-2">
+                        <% } else { %>
+                            <img src="/img/no_pic.png" width="20" height="20" class="rounded-circle mr-2">
+                        <% } %>
+                        <%- logUser.firstname %>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/videos/upload" class="nav-link"><i class="fa-solid fa-upload"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-secondary"><i class="fa-regular fa-bell"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link" role="button" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-lock"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right bg-dark text-light">
+                        <a href="/users/edit" class="dropdown-item text-success">Edit Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/users/logout" class="dropdown-item text-success">Logout</a>
+                    </div>
+                </li>
+            <% } else { %>
+                <li class="nav-item">
+                    <a href="/users/login" class="nav-link">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/signup" class="nav-link">Sign Up</a>
+                </li>
+            <% } %>
+            
+        </ul>
+    </div>
+</div>
