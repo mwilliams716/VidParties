@@ -9,13 +9,10 @@
     "dependencies": {
         "bcryptjs": "^2.4.3",
         "connect-flash": "^0.1.1",
-        "connect-timeout": "^1.9.0",
-        "cookie-session": "^2.0.0",
         "ejs": "^2.6.1",
         "express": "^4.16.4",
         "express-session": "^1.15.6",
         "fs": "^0.0.1-security",
-        "javascript-time-ago": "^2.3.13",
         "mongoose": "^5.7.5",
         "multer": "^1.4.4",
         "passport": "^0.4.0",
